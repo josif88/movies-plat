@@ -1,16 +1,33 @@
-html,
-body {
+
+*{
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.spacer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
 }
 
-* {
-  box-sizing: border-box;
+header {
+    background-color: #182131;
+    
+}
+
+.featured{
+    background-color: red;
+    height: 400px;
+}
+
+.search-input-holder{
+  width: 300px;
+}
+.ant-input-affix-wrapper{
+border-radius: 50px;
 }
