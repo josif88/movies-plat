@@ -6,7 +6,7 @@ export default function FeaturedMovies({ movieList }) {
 
   return (
     <section className="featured">
-      <Carousel afterChange={onChange} autoPlay={true}>
+      <Carousel afterChange={onChange} autoplay>
         {featuredMovies.map((item, index) => (
           <div className="content-style">
             <div style={{ position: "relative" }}>
@@ -16,32 +16,34 @@ export default function FeaturedMovies({ movieList }) {
               />
 
               <div className="overlay-style">
-                <img
-                  className="featured-image-thumbnail"
-                  src={`https://image.tmdb.org/t/p/w200/${item.poster_path}`}
-                />
-                <div className="movie-title">
-                  <h1 style={{ fontSize: "36px", color: "#fff" }}>
-                    {item.original_title}
-                  </h1>
-                  <p className="movie-desc">{item.overview}</p>
-                  <b
-                    style={{ color: "yellow" }}
-                  >{`Release date: ${item.release_date}`}</b>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      marginTop: 10,
-                    }}
-                  >
-                    <img
-                      src="./assets/play.png"
-                      style={{ width: 30, marginRight: 10 }}
-                    />
+                <div className="container spacer">
+                  <div className="movie-title">
+                    <h1 style={{ fontSize: "36px", color: "#fff" }}>
+                      {item.original_title}
+                    </h1>
+                    <p className="movie-desc">{item.overview}</p>
+                    <b
+                      style={{ color: "yellow" }}
+                    >{`Release date: ${item.release_date}`}</b>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        marginTop: 10,
+                      }}
+                    >
+                      <img
+                        src="./assets/play.png"
+                        style={{ width: 30, marginRight: 10 }}
+                      />
 
-                    <span style={{ fontSize: 16 }}>Watch Trailer</span>
+                      <span style={{ fontSize: 16 }}>Watch Trailer</span>
+                    </div>
                   </div>
+                  <img
+                    className="featured-image-thumbnail"
+                    src={`https://image.tmdb.org/t/p/w200/${item.poster_path}`}
+                  />
                 </div>
               </div>
             </div>

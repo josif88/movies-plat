@@ -23,6 +23,11 @@ section h3 {
   justify-content: space-between;
 }
 
+.single-page-aligment {
+  display: flex;
+  align-items: center;
+}
+
 .featured {
   background-color: red;
   height: 400px;
@@ -43,9 +48,6 @@ section h3 {
 }
 
 .overlay-style {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -124,10 +126,19 @@ section h3 {
   margin: 20px;
   border: 1px solid #fff;
 }
+.movie-desc {
+  font-size: medium;
+  line-height: 1.5;
+}
 
 .shallow-card {
   width: 175px;
   display: inline-table;
+}
+
+.movie-title h1 {
+  font-size: 48px !important;
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 1120px) {
@@ -140,7 +151,57 @@ section h3 {
     width: 25px;
     display: inline-table;
   }
+
+  .single-page-content {
+    margin: auto 50px !important;
+  }
 }
+
+
+.movie-title {
+  color: #fff;
+  max-width: 500px;
+}
+
+.cover-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(2, 9, 22);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 9, 22, 1) 0%,
+    rgba(2, 9, 22, 0.3) 30%,
+    rgba(2, 9, 22, 0.25) 50%,
+    rgba(2, 9, 22, 0.3) 70%,
+    rgba(2, 9, 22, 1) 100%
+  );
+}
+
+.single-page-content {
+  max-height: 200px;
+  background-color: #02091666;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto 200px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  color: #fff;
+}
+.single-page-content img {
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.single-page-content .ant-typography {
+  color: #fff !important;
+}
+
+
 
 @media screen and (max-width: 650px) {
   .container {
@@ -148,8 +209,8 @@ section h3 {
     color: #fff !important;
   }
 
-  #top-rated{
-    padding-top:75px;
+  #top-rated {
+    padding-top: 75px;
   }
   .shallow-card {
     width: 0px;
@@ -162,6 +223,7 @@ section h3 {
 
   .movie-title h1 {
     font-size: 48px !important;
+    margin-bottom: 0;
   }
 
   .movie-title b {
@@ -176,6 +238,10 @@ section h3 {
   }
 
   .overlay-style {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
     background: rgb(2, 9, 22);
     background: linear-gradient(
       0deg,
@@ -192,10 +258,26 @@ section h3 {
   .image-style {
     height: 500px;
   }
-}
 
-.movie-title {
-  padding: 10;
-  color: #fff;
-  width: 600px;
+  .single-page-content div img {
+    display: none;
+  }
+
+  .single-page-content {
+    min-height: auto !important;
+    padding: 15px;
+    margin: 0px !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    color: #fff;
+  }
+
+  .single-page-image-holder {
+    display: none !important;
+  }
+
+  .single-page-aligment {
+    
+    align-items: 'baseline' !important;
+  }
 }

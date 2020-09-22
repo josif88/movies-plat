@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "../components/navbar";
 import FeaturedMovies from "../components/featuredMovies";
 import MovieCard from "../components/movieCard";
+import MovieList from "../components/movieList";
 import Link from "next/link";
 
 export default function Home() {
@@ -47,79 +48,14 @@ export default function Home() {
         <section class="featured">
           <FeaturedMovies movieList={featured} />
         </section>
-        <section id='top-rated'>
-          <div>
-            <div
-              className="container"
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: 25,
-              }}
-            >
-              <h3>Top Rate</h3>
-              <span style={{ fontWeight: 700, fontSize: 36 }}>...</span>
-            </div>
-            <div className="horizontal-holder">
-            <div className='shallow-card'>
-                &nbsp;
-              </div>
-              {topRated.map((item, index) => (
-                <MovieCard key={index} {...item} />
-              ))}
-              <div className='shallow-card'>
-                &nbsp;
-              </div>
-            </div>
-          </div>
+        <section id="top-rated">
+          <MovieList {...{ movieList: topRated, title: "Top Rated" }} />
         </section>
         <section>
-          <div>
-            <div
-              className="container"
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: 25,
-              }}
-            >
-              <h3>Must Popular</h3>
-              <span style={{ fontWeight: 700, fontSize: 36 }}>...</span>
-            </div>
-            <div className="horizontal-holder">
-            <div className='shallow-card'>
-                &nbsp;
-              </div>
-              {featured.map((item, index) => (
-                <MovieCard key={index} {...item} />
-              ))}
-              <div className='shallow-card'>
-                &nbsp;
-              </div>
-            </div>
-          </div>
+          <MovieList {...{ movieList: featured, title: "Most Popular" }} />
         </section>
         <section>
-          <div>
-            <div
-              className="container"
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: 25,
-              }}
-            >
-              <h3>Up Coming</h3>
-              <span style={{ fontWeight: 700, fontSize: 36 }}>...</span>
-            </div>
-            <div className="horizontal-holder">
-              <div className="shallow-card">&nbsp;</div>
-              {upComing.map((item, index) => (
-                <MovieCard key={index} {...item} />
-              ))}
-              <div className="shallow-card">&nbsp;</div>
-            </div>
-          </div>
+          <MovieList {...{ movieList: featured, title: "Up Coming" }} />
         </section>
       </main>
     </>
