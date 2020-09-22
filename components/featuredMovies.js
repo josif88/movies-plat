@@ -1,4 +1,5 @@
 import { Carousel } from "antd";
+import Link from "next/link";
 
 export default function FeaturedMovies({ movieList }) {
   let featuredMovies = movieList.slice(0, 5);
@@ -13,6 +14,7 @@ export default function FeaturedMovies({ movieList }) {
                 className="image-style"
                 src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
               />
+
               <div className="overlay-style">
                 <img
                   className="featured-image-thumbnail"

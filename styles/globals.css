@@ -13,7 +13,7 @@ section h3 {
 }
 .container {
   max-width: 1100px;
-  margin: auto;
+  margin: auto 200px;
   color: #fff !important;
 }
 
@@ -109,9 +109,7 @@ section h3 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #151f2e;
-  border-radius: 10px;
-  border: 1px solid #453e3e;
+  background: #4f4f4f00;
 }
 
 ::-webkit-scrollbar-track {
@@ -127,17 +125,35 @@ section h3 {
   border: 1px solid #fff;
 }
 
+.shallow-card {
+  width: 175px;
+  display: inline-table;
+}
+
 @media screen and (max-width: 1120px) {
   .container {
-    margin: auto 25px;
+    margin: auto 50px;
     color: #fff !important;
+  }
+
+  .shallow-card {
+    width: 25px;
+    display: inline-table;
   }
 }
 
 @media screen and (max-width: 650px) {
   .container {
-    margin: auto 15px;
+    margin: auto 35px;
     color: #fff !important;
+  }
+
+  #top-rated{
+    padding-top:75px;
+  }
+  .shallow-card {
+    width: 0px;
+    display: inline-table;
   }
 
   .movie-title {

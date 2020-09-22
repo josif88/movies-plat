@@ -6,7 +6,7 @@ export default function Navbar() {
       <logo>
         <img src="./assets/logo.png" />
       </logo>
-      <div class="search-input-holder">
+      <div className="search-input-holder">
         {" "}
         <Input.Search
           placeholder="search"
