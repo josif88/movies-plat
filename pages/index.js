@@ -45,7 +45,7 @@ export default function Home() {
         <Navbar />
       </header>
       <main>
-        <section class="featured">
+        <section className="featured">
           <FeaturedMovies movieList={featured} />
         </section>
         <section id="top-rated">

@@ -60,8 +60,8 @@ const MovieInfo = () => {
           <span style={{ marginRight: 5 }}>
             <b>Genres:</b>
           </span>
-          {movie.genres.map((item) => (
-            <Tag>{item.name}</Tag>
+          {movie.genres.map((item,index) => (
+            <Tag key={index}>{item.name}</Tag>
           ))}
         </div>
       </div>

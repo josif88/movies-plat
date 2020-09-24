@@ -3,9 +3,9 @@ import { Input } from "antd";
 export default function Navbar() {
   return (
     <div className="container spacer">
-      <logo>
+      <div>
         <img src="./assets/logo.png" />
-      </logo>
+      </div>
       <div className="search-input-holder">
         {" "}
         <Input.Search
