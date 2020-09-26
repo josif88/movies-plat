@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <div className="container spacer">
       <div>
-        <img src="./assets/logo.png" />
+        <img src="/assets/logo.png" />
       </div>
       <div className="search-input-holder">
         {" "}

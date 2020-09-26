@@ -23,14 +23,14 @@ export default function Home() {
       fetch(
         "https://api.themoviedb.org/3/movie/top_rated?api_key=2fa5f55d6b9b49c888ed0bb517768275"
       )
-        .then((reponse) => reponse.json())
+        .then((response) => response.json())
         .then((json) => {
           setTopRated(json.results);
         }),
       fetch(
         "https://api.themoviedb.org/3/movie/upcoming?api_key=2fa5f55d6b9b49c888ed0bb517768275"
       )
-        .then((reponse) => reponse.json())
+        .then((response) => response.json())
         .then((json) => {
           setUpComing(json.results);
         }),
@@ -55,7 +55,7 @@ export default function Home() {
           <MovieList {...{ movieList: featured, title: "Most Popular" }} />
         </section>
         <section>
-          <MovieList {...{ movieList: featured, title: "Up Coming" }} />
+          <MovieList {...{ movieList: upComing, title: "Up Coming" }} />
         </section>
       </main>
     </>

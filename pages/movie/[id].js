@@ -1,31 +1,15 @@
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Cover from "../components/cover";
-import { Image, Rate, Tag, Typography } from "antd";
-
-const { default: Navbar } = require("../components/navbar");
+import Cover from "../../components/cover";
+import Navbar from "../../components/navbar";
+import { Image, Rate, Tag } from "antd";
 
 const MovieInfo = (props) => {
   const [movie, setMovie] = useState({});
-  const [loadingFlag, setLoadingFlag] = useState(true);
-  // const movieId = useRouter().query.id;
-
-  // useEffect(() => {
-  //   if (!movieId) return;
-
-  //   fetch(
-  //     "https://api.themoviedb.org/3/movie/" +
-  //       movieId +
-  //       "?api_key=2fa5f55d6b9b49c888ed0bb517768275"
-  //   )
-  //     .then((resp) => resp.json())
-  //     .then(setMovie)
-  //     .then(setLoadingFlag);
-  // }, [movieId]);
+  const [loadingFlag, setLoadingFlag] = useState(false);
 
   useEffect(() => {
     setMovie(props.movie);
-    setLoadingFlag(false);
+    
   }, []);
 
   return loadingFlag ? (
@@ -65,9 +49,9 @@ const MovieInfo = (props) => {
           <span style={{ marginRight: 5 }}>
             <b>Genres:</b>
           </span>
-          {movie.genres.map((item, index) => (
+          {/* {movie.genres.map((item, index) => (
             <Tag key={index}>{item.name}</Tag>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
@@ -76,10 +60,9 @@ const MovieInfo = (props) => {
 
 export default MovieInfo;
 
-export async function getServerSideProps({ query }) {
-  console.log(query);
+export async function getServerSideProps({ params }) {
   const resp = await fetch(
-    `https://api.themoviedb.org/3/movie/${query.id}?api_key=2fa5f55d6b9b49c888ed0bb517768275`
+    `https://api.themoviedb.org/3/movie/${params.id}?api_key=2fa5f55d6b9b49c888ed0bb517768275`
   );
   const movie = await resp.json();
 
@@ -89,3 +72,16 @@ export async function getServerSideProps({ query }) {
     },
   };
 }
+
+// export async function getStaticPaths() {
+//   const res = await fetch(
+//     "https://api.themoviedb.org/3/movie/top_rated?api_key=2fa5f55d6b9b49c888ed0bb517768275"
+//   );
+//   const posts = await res.json();
+
+//   const paths = posts.results.map((post) => ({
+//     params: { id: post.id.toString() },
+//   }));
+
+//   return { paths, fallback: false };
+// }
